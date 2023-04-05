@@ -8,6 +8,7 @@ flex-direction: column;
 padding: 20px;
 border: 1px solid #2a2a2a;
 gap: 20px;
+margin-bottom: 10px;
 `
 
 export const FormField = styled.label`

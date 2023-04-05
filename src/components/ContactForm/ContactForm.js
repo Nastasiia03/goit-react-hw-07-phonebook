@@ -1,7 +1,7 @@
 import { Formik } from 'formik';
 import { Button, ErrorMessage, Field, Form, FormField } from './ContactForm.styled';
 import { useDispatch, useSelector } from "react-redux";
-import { addContact } from 'redux/contactsSlice';
+import { addContact } from 'redux/operations';
 import { getContacts } from 'redux/selectors';
 
 function validateName(value) {
@@ -30,7 +30,7 @@ export const ContactForm = () => {
 
     return (
     <Formik
-        initialValues={{ name: "", number: "" }}
+        initialValues={{ name: "", phone: "" }}
         onSubmit={(values, actions) => {
           const sameName = contacts.find(contact => contact.name.toLowerCase().includes(values.name.toLowerCase()));
           if (sameName) {
@@ -52,8 +52,8 @@ export const ContactForm = () => {
               </FormField>
               <FormField>
                 Number
-                <Field name="number" type="tel" validate={validateNumber} />
-                {errors.number && touched.number && <ErrorMessage>{errors.number}</ErrorMessage>}
+                <Field name="phone" type="tel" validate={validateNumber} />
+                {errors.phone && touched.phone && <ErrorMessage>{errors.phone}</ErrorMessage>}
               </FormField>
 
               <Button type="submit">Add contact</Button>

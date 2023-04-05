@@ -16,6 +16,7 @@ export const ContactList = () => {
     }
     const visibleContacts = getVisibleContacts();
     
+    
 
     return (
         <ul>
