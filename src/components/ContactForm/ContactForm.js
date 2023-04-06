@@ -2,7 +2,7 @@ import { Formik } from 'formik';
 import { Button, ErrorMessage, Field, Form, FormField } from './ContactForm.styled';
 import { useDispatch, useSelector } from "react-redux";
 import { addContact } from 'redux/operations';
-import { getContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/selectors';
 
 function validateName(value) {
    let error;
@@ -25,7 +25,7 @@ function validateName(value) {
  }
 
 export const ContactForm = () => {
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
     return (
